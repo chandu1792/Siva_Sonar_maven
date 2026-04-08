@@ -1,6 +1,6 @@
 
 // Define the URL of the Artifactory registry
-def registry = 'https://trialcn8cgy.jfrog.io/'
+def registry = 'https://trial6uwj7u.jfrog.io/'
 
 
 pipeline {
@@ -44,7 +44,7 @@ pipeline {
             steps {
                 script {
                     echo '<--------------- Jar Publish Started --------------->'
-                    def server = Artifactory.newServer url: registry + "/artifactory", credentialsId: "Jfrog"
+                    def server = Artifactory.newServer url: registry + "/artifactory", credentialsId: "artifactory-cred"
                     def properties = "buildid=${env.BUILD_ID},commitid=${GIT_COMMIT}"
                     def uploadSpec = """{
                           "files": [
